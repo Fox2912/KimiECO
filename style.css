@@ -1,0 +1,43 @@
+body {
+	margin: 0;               /* 余白を消す */
+  	min-height: 100vh;       /* 画面高を確保 */
+  	position: relative;      /* 疑似要素の基準 */
+
+	text-align: center;
+}
+
+body::before {
+  	content: "";             /* 疑似要素を有効化 */
+  	position: absolute;      /* body基準で配置 */
+
+	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+
+  	background-image: url("picture/haikei1.png"); /* 背景画像 */
+  	background-size: 250%;
+
+	opacity: 0.3;   /* 透明度 */
+  	z-index: -1;             /* 中身の背面へ */
+}
+
+#Logo {
+	margin-top: 15%;
+	width: 70%;
+
+	filter: drop-shadow( 15px 15px 15px black);
+}
+
+.button {
+	margin-top: 5%;
+	width: 50%;
+
+	filter: drop-shadow( 10px 10px 5px black);
+}
+
+/* メディアクエリ(600px) 
+@media (max-width: 600px) {
+
+}
+/* メディアクエリ終了*/
