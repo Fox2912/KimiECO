@@ -112,8 +112,22 @@
                 // キャラ画像（character/n.png）を表示
                 $('#result-character')
                 .attr('src', `character/${gid}番.png`)
-                .attr('alt', `キャラクター${gid}`);
+                .attr('alt', `キャラクター${gid}`)
+                .attr('role', 'button')
+                .attr('tabindex', '0')
+                .attr('aria-label', 'キャラクターを拡大表示')
+                .off('click keydown')
+                .on('click', function(){
+                    window.location.href = `character_view.html?gid=${gid}`;
+                })
+                .on('keydown', function(e){
+                    if(e.key === 'Enter' || e.key === ' '){
+                        e.preventDefault();
+                        window.location.href = `character_view.html?gid=${gid}`;
+                    }
+                });
 
+                $('.character-badge').text('タップで拡大');
 
             }
             
