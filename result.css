@@ -101,9 +101,11 @@ body::before {
 
 /* 強調テキスト */
 .st{
-  color: white;
-}
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke: 0.02px black;
 
+}
+  
 /* 見出し＋リード文 */
 .lead{
   margin:0 0 18px;
@@ -205,64 +207,6 @@ h1{
 
 @media (max-width: 780px) {
 
-.bg{
-  background:url("picture/haikei.png") center/450px repeat;
-}
-
-  .screen{
-    padding: 10px;                 /* ここが効く */
-    place-items: start center;      /* 上寄せ（全画面カードでも自然） */
-  }
-
-  .card{
-    width: 100%;
-    max-width: none;
-    min-height: calc(100svh - 20px); /* screenのpadding(10*2)ぶん引く */
-    padding: 18px 14px 22px;
-    border-radius: 20px;
-    overflow: auto;                 /* 文章が長い時に中だけスクロール */
-  }
-
-.logo{
-  width:min(75%);
-  height:auto;
-  display:block;
-  margin:4px auto 10px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.14));
-}
-
-/* 見出し＋リード文 */
-.lead{
-  margin:0 0 18px;
-  font-size:14px;
-  opacity:.78;
-}
-
-/* CTAボタン：丸角＋影は控えめ、押せる感だけ残す */
-.cta{
-  border:0;
-  border-radius:18px;
-  padding:13px 18px;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.02em;
-}
-
-.result-character{
-  position:static;
-  display:block;
-  margin:10px auto 0;
-  width:60%;
-}
-
-/* 右側に余白を取ってるなら、スマホは戻す */
-.result-text{
-    padding: 12px 12px;        /* スマホは少しだけ小さく */
-    font-size: 14px;
-}
-
-@media (max-width: 780px) {
-
   .bg{
     background:url("picture/haikei.png") center/450px repeat;
   }
@@ -336,9 +280,10 @@ h1{
   .result-text{
     padding: 14px 14px;
     font-size: 14px;
+    font-weight: 500;
   }
 }
-}
+
 
 /* --- キャラ画像：拡大ページへ遷移できることを分かりやすく --- */
 .result-character{
