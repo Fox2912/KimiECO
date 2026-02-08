@@ -21,9 +21,6 @@
 
     <ul></ul>
     <div class ="point">あなたのエコ度は... <span data-point-num></span>です</div>
-    <!--
-    <div class="result">前回の結果は<span id="kekka"></span></div>
-    -->
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
@@ -280,14 +277,7 @@ $(function(){
   if(!restored){
     saveState();
   }
-
-  // 前回の結果表示
-//if (localStorage.getItem('sindan') == null){
-//  $('#kekka').text('まだ無いよ！');
-//}else{
-//  $('#kekka').text(localStorage.getItem('sindan'));
-//}
-
+    
   // 配列シャッフル関数
   function shuffleArray(arr){
     for (let i = arr.length - 1; i > 0; i--) {
