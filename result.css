@@ -91,6 +91,7 @@ body::before {
   padding: 14px 14px;
   line-height: 1.75;
   font-size: 14px;
+  font-weight: 550;
 
   /* 念のため：ブロックを左に寄せ切る */
   margin-left: 0;
@@ -98,14 +99,13 @@ body::before {
 }
 
 
-
 /* 強調テキスト */
 .st{
-  color: rgb(255, 255, 255);
-  -webkit-text-stroke: 0.02px black;
+  color: white;
 
+  -webkit-text-stroke: 0.06px black;
 }
-  
+
 /* 見出し＋リード文 */
 .lead{
   margin:0 0 18px;
@@ -208,21 +208,49 @@ h1{
 @media (max-width: 780px) {
 
   .bg{
-    background:url("picture/haikei.png") center/450px repeat;
+    background: url("picture/haikei.png") center/450px repeat;
+  }
+
+  .screen{
+    padding: 10px;
+    place-items: start center;
   }
 
   .card{
-    width: min(420px, 92vw);
+    width: 100%;
+    max-width: none;
+    min-height: calc(100svh - 20px);
     padding: 18px 14px 22px;
-    border-radius: 24px;
+    border-radius: 20px;
+    overflow: auto;
   }
 
-  /* キャラ枠：中で中央寄せにする */
+  .logo{
+    width: 75%;
+    height: auto;
+    display: block;
+    margin: 4px auto 10px;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.14));
+  }
+
+  .lead{
+    margin: 0 0 18px;
+    font-size: 14px;
+    opacity: .78;
+  }
+
+  .cta{
+    border-radius: 18px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+
+  /* キャラ枠：中で中央寄せ */
   .character-wrap{
     position: relative;
     width: 100%;
     margin: 10px 0 12px;
-    padding: 38px 12px 14px;   /* 上にバッジ分の余白 */
+    padding: 38px 12px 14px;
     border-radius: 18px;
     border: 1px solid rgba(255,255,255,.7);
     background:
@@ -231,10 +259,9 @@ h1{
     box-shadow: 0 14px 30px rgba(0,0,0,.10);
     overflow: hidden;
 
-    /* これがズレ対策：中身を中央に揃える */
     display: grid;
     place-items: center;
-    min-height: 320px;          /* キャラの“ステージ”高さを固定 */
+    min-height: 320px;
   }
 
   .character-wrap::before{
@@ -264,7 +291,6 @@ h1{
     -webkit-backdrop-filter: blur(10px);
   }
 
-  /* キャラ画像*/
   .result-character{
     display: block;
     width: min(90%, 280px);
@@ -272,33 +298,12 @@ h1{
     height: auto;
     object-fit: contain;
     object-position: center bottom;
-
-    margin: 0 auto; /* 念押し */
+    margin: 0 auto;
     filter: drop-shadow(0 18px 22px rgba(0,0,0,.18));
   }
 
   .result-text{
     padding: 14px 14px;
     font-size: 14px;
-    font-weight: 500;
-  }
-}
-
-
-/* --- キャラ画像：拡大ページへ遷移できることを分かりやすく --- */
-.result-character{
-  cursor: zoom-in;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: transform .12s ease, filter .12s ease;
-}
-.result-character:focus-visible{
-  outline: 3px solid rgba(22,163,148,.35);
-  outline-offset: 3px;
-  border-radius: 12px;
-}
-@media (hover:hover) and (pointer:fine){
-  .result-character:hover{
-    transform: scale(1.02);
   }
 }
