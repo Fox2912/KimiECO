@@ -95,6 +95,7 @@ $(function(){
   // 0..3（A..D）の各カテゴリ得点（=選んだ回数）
   let categoryScore = [0,0,0,0];
 
+  
   // 1..17 のSDGs得点
   let goalScore = Array(18).fill(0);
 
@@ -191,7 +192,7 @@ $(function(){
       'title':'RPGでパッシブスキル（常に発動）を1つ選べる）',
       'anser':[
         'HPゲージが減ってる人を察知できる',
-        '残業トラップを回避する嗅覚がある',
+        'お使いクエストを回避する嗅覚がある',
         '暑さ・寒さ・異常気象の前兆に気づける',
         '魔王と王様を仲良くさせる'
       ]
@@ -299,7 +300,7 @@ $(function(){
   // 問題表示
   function render(count){
   $('li').remove();
-  $('h1').text(list[count]['title']);
+  $('h1').html(list[count]['title']);
 
   // 選択肢の表示順をランダム化（戻る用に保存も）
   // すでに保存されていればそれを使う
