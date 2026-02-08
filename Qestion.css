@@ -120,6 +120,7 @@ h1{
   justify-content: center;    /* 横センター（text-alignでもOK） */
   text-align: center;
 }
+
 ul{
   width: min(600px, 100%); /* 固定→可変 */
   margin: 0 auto;
