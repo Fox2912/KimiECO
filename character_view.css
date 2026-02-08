@@ -154,11 +154,36 @@ body::before {
   outline-offset: 3px;
 }
 
-/* キャラを少し上に */
-#zoom-img{
-  margin-bottom: 0;          /* 10% を消す */
-  transform: translateY(-14px);
+.viewer{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 18px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(280px 160px at 50% 18%, rgba(255,255,255,.10), rgba(255,255,255,.06) 60%, rgba(255,255,255,.02)),
+    linear-gradient(135deg, rgba(255,247,232,.18), rgba(234,247,243,.10));
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+
+  display: grid;
+  place-items: center;
 }
+
+
+#zoom-img{
+  display: block;
+  width: min(100%, 560px);   /* ←ここで“でかすぎ”防止 */
+  max-height: 72svh;         /* 画面からはみ出し防止 */
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+
+  margin-bottom: 0;
+  transform: translateY(-14px);
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.18));
+}
+
 
 
 
