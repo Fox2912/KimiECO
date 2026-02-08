@@ -339,3 +339,21 @@ h1{
   }
 }
 }
+
+/* --- キャラ画像：拡大ページへ遷移できることを分かりやすく --- */
+.result-character{
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform .12s ease, filter .12s ease;
+}
+.result-character:focus-visible{
+  outline: 3px solid rgba(22,163,148,.35);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+@media (hover:hover) and (pointer:fine){
+  .result-character:hover{
+    transform: scale(1.02);
+  }
+}
